@@ -7,7 +7,7 @@ let leadsFromLocalStorage = JSON.parse( localStorage.getItem("myLeads") )
 
 if (leadsFromLocalStorage) {
     myLeads = leadsFromLocalStorage
-    renderLeads()
+    render(myLeads)
 }
 
 deleteBtn.addEventListener("dblclick", () => {
@@ -22,12 +22,12 @@ inputBtn.addEventListener("click", function() {
     }
     inputEl.value = ""
     localStorage.setItem("myLeads", JSON.stringify(myLeads) )
-    renderLeads()
+    render(myLeads)
 })
 
-function renderLeads() {
+function render(arr) {
     let listItems = ""
-    for (let i = 0; i < myLeads.length; i++) {
+    for (let i = 0; i < arr.length; i++) {
         listItems += `
             <li>
                 <a target='_blank' href='${myLeads[i]}'>
@@ -46,5 +46,5 @@ function deleteLead(index) {
     myLeads = newList
     leadsFromLocalStorage.splice(index, 1)
     localStorage.setItem("myLeads", JSON.stringify(leadsFromLocalStorage))
-    renderLeads()
+    render(myLeads)
 }
