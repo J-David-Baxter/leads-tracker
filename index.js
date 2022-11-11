@@ -43,17 +43,8 @@ function render(arr) {
                     ${arr[i]}
                 </a>
             </li>
-            <button id="delete-lead-btn" onclick="deleteLead(${i})">X</button>
-            <br />
         `
     }
     ulEl.innerHTML = listItems  
 }
 
-function deleteLead(index) {
-    const newList = myLeads.filter(lead => myLeads.indexOf(lead) !== index)
-    myLeads = newList
-    leadsFromLocalStorage.splice(index, 1)
-    localStorage.setItem("myLeads", JSON.stringify(leadsFromLocalStorage))
-    render(myLeads)
-}
