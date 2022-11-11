@@ -30,8 +30,8 @@ function render(arr) {
     for (let i = 0; i < arr.length; i++) {
         listItems += `
             <li>
-                <a target='_blank' href='${myLeads[i]}'>
-                    ${myLeads[i]}
+                <a target='_blank' href='${arr[i]}'>
+                    ${arr[i]}
                 </a>
             </li>
             <button id="delete-lead-btn" onclick="deleteLead(${i})">X</button>
