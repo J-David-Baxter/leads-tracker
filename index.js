@@ -12,12 +12,14 @@ if (leadsFromLocalStorage) {
 
 deleteBtn.addEventListener("dblclick", () => {
     localStorage.clear()
-    myleads = []
+    myLeads = []
     ulEl.innerHTML = ""
 })
 
 inputBtn.addEventListener("click", function() {
-    myLeads.push(inputEl.value)
+    if (!/^\s*$/.test(inputEl.value)) {
+        myLeads.push(inputEl.value)
+    }
     inputEl.value = ""
     localStorage.setItem("myLeads", JSON.stringify(myLeads) )
     renderLeads()
