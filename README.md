@@ -2,4 +2,5 @@
 
 1. Saves urls
 2. Persists data in local storage
-3. Delete individual urls or all urls at once
+3. Delete all urls
+4. Save current tab url
