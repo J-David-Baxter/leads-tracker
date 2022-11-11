@@ -42,7 +42,7 @@ function renderLeads() {
 }
 
 function deleteLead(index) {
-    const newList = myLeads.filter((lead, i) => myLeads.indexOf(lead) !== index)
+    const newList = myLeads.filter(lead => myLeads.indexOf(lead) !== index)
     myLeads = newList
     leadsFromLocalStorage.splice(index, 1)
     localStorage.setItem("myLeads", JSON.stringify(leadsFromLocalStorage))
